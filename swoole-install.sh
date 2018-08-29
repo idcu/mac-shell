@@ -6,9 +6,9 @@ cd ~/build && \
 #删除已存在的swoole-src目录
 rm -rf ./swoole-src && \
 #下载master分支swoole源码到/tmp目录
-curl -o ./tmp/swoole.tar.gz https://github.com/swoole/swoole-src/archive/master.tar.gz -L && \
+curl -o /tmp/swoole.tar.gz https://github.com/swoole/swoole-src/archive/master.tar.gz -L && \
 #解压swoole源码到当前目录
-tar zxvf ./tmp/swoole.tar.gz && \
+tar zxvf /tmp/swoole.tar.gz && \
 #重命名文件夹为swoole-src
 mv swoole-src* swoole-src && \
 #进入swoole-src目录
