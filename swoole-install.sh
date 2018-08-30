@@ -1,5 +1,7 @@
 #!/bin/bash
-#创建build目录
+#安装需要用到的依赖
+brew install autoconf wget openssl nghttp2 pcre postgresql && \
+#创建编译目录
 mkdir -p ~/build && \
 #进入build目录
 cd ~/build && \
@@ -27,6 +29,8 @@ phpize && \
 --enable-coroutine-postgresql=yes && \
 #清除上次make命令编译产生的object文件（*.o）及可执行文件
 make clean && \
+#复制openssl头文件到编译swoole-src目录的include文件夹
+cp -r /usr/local/opt/openssl/include/openssl ./include/ && \
 #从Makefile读取指令，然后编译
 make && \
 #从Makefile读取指令，安装到指定的位置
